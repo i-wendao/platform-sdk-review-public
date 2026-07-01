@@ -1,20 +1,35 @@
 # Format Check
 
-## head -n 5 scripts/audit/preflight_v6.sh
+## wc -l scripts/audit/preflight_v6.sh
+```text
+104 scripts/audit/preflight_v6.sh
+```
+
+## head -n 8 scripts/audit/preflight_v6.sh
 ```text
 #!/usr/bin/env bash
 set -euo pipefail
 
 usage() {
   cat <<'USAGE'
+Usage: preflight_v6.sh [--expect-branch <branch>] [--expect-remote <name> <url>] [--require-clean]
+
+Read-only git preflight for Tier 1 / Tier 2 batches.
 ```
 
-## wc -l scripts/audit/preflight_v6.sh
+## tail -n 8 scripts/audit/preflight_v6.sh
 ```text
-104 scripts/audit/preflight_v6.sh
+    exit 1
+  fi
+fi
+
+if [ "$REQUIRE_CLEAN" -eq 1 ] && [ -n "$STATUS" ]; then
+  echo "ERROR: git working tree is not clean" >&2
+  exit 1
+fi
 ```
 
-## grep structure
+## grep structure summary
 ```text
 4:usage() {
 11:  --expect-branch <branch>      Require current branch to match <branch>.

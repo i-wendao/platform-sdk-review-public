@@ -1,0 +1,56 @@
+# Line Structure Evidence
+
+This file proves the draft script is a true multi-line text file. It is not raw data evidence.
+
+## nl -ba scripts/audit/preflight_v6.sh | sed -n '1,40p'
+```text
+     1	#!/usr/bin/env bash
+     2	set -euo pipefail
+     3	
+     4	usage() {
+     5	  cat <<'USAGE'
+     6	Usage: preflight_v6.sh [--expect-branch <branch>] [--expect-remote <name> <url>] [--require-clean]
+     7	
+     8	Read-only git preflight for Tier 1 / Tier 2 batches.
+     9	
+    10	Options:
+    11	  --expect-branch <branch>      Require current branch to match <branch>.
+    12	  --expect-remote <name> <url>  Require git remote <name> fetch/push URL to match <url>.
+    13	  --require-clean              Require git status --short to be empty.
+    14	  -h, --help                   Show this usage text.
+    15	
+    16	This script must not read .env, inspect secrets, call APIs, write databases,
+    17	run tests, run SDK/auth/sandbox flows, modify remotes, fetch, pull, push,
+    18	delete files, or modify project files.
+    19	USAGE
+    20	}
+    21	
+    22	EXPECT_BRANCH=""
+    23	EXPECT_REMOTE_NAME=""
+    24	EXPECT_REMOTE_URL=""
+    25	REQUIRE_CLEAN=0
+    26	
+    27	while [ "$#" -gt 0 ]; do
+    28	  case "$1" in
+    29	    --expect-branch)
+    30	      if [ "$#" -lt 2 ]; then
+    31	        echo "ERROR: --expect-branch requires a value" >&2
+    32	        usage >&2
+    33	        exit 2
+    34	      fi
+    35	      EXPECT_BRANCH="$2"
+    36	      shift 2
+    37	      ;;
+    38	    --expect-remote)
+    39	      if [ "$#" -lt 3 ]; then
+    40	        echo "ERROR: --expect-remote requires <name> <url>" >&2
+```
+
+## newline statistics
+```text
+line_1_is_shebang=True
+line_2_is_strict_mode=True
+newline_count=104
+script_status=draft
+script_executed=no
+```

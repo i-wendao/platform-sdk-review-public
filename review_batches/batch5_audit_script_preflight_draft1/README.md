@@ -4,7 +4,7 @@ This review package contains the draft audit script `scripts/audit/preflight_v6.
 
 Status: `draft`.
 
-The first public review failed because the script appeared in compressed single-line format. Batch 5.AUDIT-SCRIPT-PREFLIGHT-DRAFT1R rewrote the draft as a standard multi-line bash script and added `format_check.txt` evidence.
+The earlier public reviews failed because GitHub raw review appeared to show abnormal compressed script formatting. Batch 5.AUDIT-SCRIPT-PREFLIGHT-DRAFT1R3 keeps the public path blacklist unchanged and replaces the previous `raw_line_evidence.txt` name with `line_structure_evidence.txt`.
 
 The script is not reviewed, not approved, and must not be executed by Codex until a later batch marks it `reviewed` after ChatGPT review PASS and Codex reverse review PASS.
 
