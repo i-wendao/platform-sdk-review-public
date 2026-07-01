@@ -51,3 +51,8 @@ notes:
   private_base_commit: df8f253
   private_state: uncommitted_draft_audit_script
   public_export_reason: ChatGPT review of draft read-only git preflight audit script before reviewed status
+
+- batch: batch5_audit_script_preflight_draft1R
+  private_base_commit: df8f253
+  private_state: uncommitted_draft_audit_script_format_repair
+  public_export_reason: ChatGPT re-review of multi-line formatted draft read-only git preflight audit script

@@ -86,10 +86,12 @@ fi
 if [ -n "$EXPECT_REMOTE_NAME" ]; then
   FETCH_LINE="${EXPECT_REMOTE_NAME}	${EXPECT_REMOTE_URL} (fetch)"
   PUSH_LINE="${EXPECT_REMOTE_NAME}	${EXPECT_REMOTE_URL} (push)"
+
   if ! printf '%s\n' "$REMOTE_OUTPUT" | grep -Fx "$FETCH_LINE" >/dev/null; then
     echo "ERROR: remote fetch URL mismatch for '$EXPECT_REMOTE_NAME'" >&2
     exit 1
   fi
+
   if ! printf '%s\n' "$REMOTE_OUTPUT" | grep -Fx "$PUSH_LINE" >/dev/null; then
     echo "ERROR: remote push URL mismatch for '$EXPECT_REMOTE_NAME'" >&2
     exit 1

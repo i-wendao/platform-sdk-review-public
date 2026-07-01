@@ -1,0 +1,28 @@
+# Format Check
+
+## head -n 5 scripts/audit/preflight_v6.sh
+```text
+#!/usr/bin/env bash
+set -euo pipefail
+
+usage() {
+  cat <<'USAGE'
+```
+
+## wc -l scripts/audit/preflight_v6.sh
+```text
+104 scripts/audit/preflight_v6.sh
+```
+
+## grep structure
+```text
+4:usage() {
+11:  --expect-branch <branch>      Require current branch to match <branch>.
+12:  --expect-remote <name> <url>  Require git remote <name> fetch/push URL to match <url>.
+13:  --require-clean              Require git status --short to be empty.
+27:while [ "$#" -gt 0 ]; do
+28:  case "$1" in
+29:    --expect-branch)
+38:    --expect-remote)
+48:    --require-clean)
+```
