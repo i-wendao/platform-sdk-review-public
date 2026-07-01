@@ -1,0 +1,59 @@
+diff --git a/docs/DECISION_LOG.md b/docs/DECISION_LOG.md
+index f4ae9cb..824ab11 100644
+--- a/docs/DECISION_LOG.md
++++ b/docs/DECISION_LOG.md
+@@ -33,3 +33,12 @@
+ - 内容：外部工作流编排项目可作为方法论参考，但 `/opt/project/sdk` 不引入其作为主依赖。
+ - 吸收内容：质量模式、上下文注入、角色分工、问题闭环、Closure 知识沉淀。
+ - 不吸收内容：全自动执行、hooks 接管、SDK 调用接管、数据库写入接管、token refresh 接管、绕过用户确认。
++
++## 2026-07-01：Batch 5 治理补写决策
++
++- 私有仓库 `/opt/project/sdk` 是 source of truth；公开仓库 `/opt/project/sdk_public_review` 只作为 ChatGPT 可访问的 sanitized review mirror，不替代私有仓库事实源。
++- private -> public 只能执行单向白名单导出；public mirror 不得反向合并到 private，不替代 Closure / RAG / Issue / Decision。
++- 后续批次采用 `docs/TOKEN_EFFICIENCY_POLICY.md` 定义的 Tier 1 / Tier 2 / Tier 3 额度效率执行分级；额度效率不得覆盖安全边界。
++- 后续可复用审核脚本必须遵守 `docs/AUDIT_SCRIPT_POLICY.md` 的 `planned` / `draft` / `reviewed` / `deprecated` 状态治理；Codex 不得运行 planned 或 draft 脚本。
++- Shopee TypeScript SDK adapter skeleton 仅为静态 candidate / boundary / output contract 代码；不代表 SDK/API 已验证，不得据此调用平台 API。
++- 涉及新增文件的 patch 必须使用标准 `diff --git a/... b/...` header；存在路径风险时，`git apply --check` 之外还必须用临时目录真实 apply 验证最终落点。
+diff --git a/docs/PROJECT_MAP.md b/docs/PROJECT_MAP.md
+index c9a622c..a533f66 100644
+--- a/docs/PROJECT_MAP.md
++++ b/docs/PROJECT_MAP.md
+@@ -187,3 +187,37 @@ RAG 检索范围：
+ 风险与中止条件：
+ Closure 输出位置：
+ ```
++
++## 8. Batch 5 治理补充地图
++
++### 8.1 Public Review Mirror
++
++```text
++/opt/project/sdk_public_review
++```
++
++用途：独立 public sanitized review mirror，只用于向 ChatGPT 暴露白名单审核材料。它不包含 private git 历史，不是 source of truth，不得反向合并到 `/opt/project/sdk`。
++
++### 8.2 新增治理文档
++
++```text
++docs/TOKEN_EFFICIENCY_POLICY.md
++docs/AUDIT_SCRIPT_POLICY.md
++```
++
++- `TOKEN_EFFICIENCY_POLICY.md`：定义 Tier 1 / Tier 2 / Tier 3 执行分级与输出压缩边界。
++- `AUDIT_SCRIPT_POLICY.md`：定义未来 `scripts/audit/` 的 planned / draft / reviewed / deprecated 状态治理；当前只建规则，不代表脚本可运行。
++
++### 8.3 Batch 5 关键审核包
++
++```text
++review_queue/batch5_13R3_standard_patch/
++review_queue/batch5_14_skeleton_static_review/
++review_queue/batch5_governance_checkpoint1/
++review_queue/batch5_governance_backfill1/
++```
++
++- `batch5_13R3_standard_patch/`：标准 patch header 修复与临时目录真实 apply 落点验证审核包。
++- `batch5_14_skeleton_static_review/`：Shopee TS SDK adapter skeleton 三文件静态复核审核包。
++- `batch5_governance_checkpoint1/`：v6 enhanced 治理落地 checkpoint 审核包。
++- `batch5_governance_backfill1/`：Decision / Project Map / Issue / RAG / Closure 补写方案审核包。

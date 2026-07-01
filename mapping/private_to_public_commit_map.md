@@ -41,3 +41,8 @@ notes:
   private_base_commit: 2aa8152
   private_state: uncommitted_governance_backfill_proposal
   public_export_reason: ChatGPT strict review of proposed governance backfill for Decision Log, Project Map, Issue Closed Loop, RAG, and Closure
+
+- batch: batch5_governance_backfill_apply1
+  private_base_commit: c627b35
+  private_state: uncommitted_governance_backfill_apply_diff
+  public_export_reason: ChatGPT review of Decision Log, Project Map, Issue, RAG, and Closure backfill diff before private commit

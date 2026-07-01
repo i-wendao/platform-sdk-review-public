@@ -1,0 +1,3 @@
+ docs/DECISION_LOG.md |  9 +++++++++
+ docs/PROJECT_MAP.md  | 34 ++++++++++++++++++++++++++++++++++
+ 2 files changed, 43 insertions(+)

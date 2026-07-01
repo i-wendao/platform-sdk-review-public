@@ -1,0 +1,6 @@
+ M docs/DECISION_LOG.md
+ M docs/PROJECT_MAP.md
+?? review_queue/batch5_governance_backfill_apply1/
+?? runtime/closures/2026-07-01_batch5_governance_backfill_closure.md
+?? runtime/logs/batch5_governance_issue_closed_loop_backfill.md
+?? runtime/rag_snapshots/batch5_governance_backfill.md
