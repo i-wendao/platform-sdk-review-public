@@ -36,3 +36,8 @@ notes:
   private_base_commit: c5ba363
   private_state: uncommitted_governance_checkpoint
   public_export_reason: ChatGPT review of v6 governance checkpoint, gaps, cadence, and public sync safety
+
+- batch: batch5_governance_backfill1
+  private_base_commit: 2aa8152
+  private_state: uncommitted_governance_backfill_proposal
+  public_export_reason: ChatGPT strict review of proposed governance backfill for Decision Log, Project Map, Issue Closed Loop, RAG, and Closure
