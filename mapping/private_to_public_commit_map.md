@@ -16,3 +16,8 @@ notes:
 - Public repo is a sanitized review mirror only.
 - Private repo remains the source of truth.
 - Public repo must not be merged back into private repo.
+
+- batch: batch5_13R2_path_repair
+  private_base_commit: 0e0541d
+  private_state: uncommitted_review_package
+  public_export_reason: ChatGPT review of corrected adapter skeleton patch path repair
