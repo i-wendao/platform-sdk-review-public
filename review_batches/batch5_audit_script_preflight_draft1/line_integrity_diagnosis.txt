@@ -1,0 +1,137 @@
+# Line Integrity Diagnosis
+
+## Files compared
+
+1. `scripts/audit/preflight_v6.sh`
+2. `review_queue/batch5_audit_script_preflight_draft1/source_snapshot/scripts/audit/preflight_v6.sh`
+3. `/opt/project/sdk_public_review/review_batches/batch5_audit_script_preflight_draft1/source_snapshot/scripts/audit/preflight_v6.sh`
+
+## wc -l
+```text
+ 104 scripts/audit/preflight_v6.sh
+ 104 review_queue/batch5_audit_script_preflight_draft1/source_snapshot/scripts/audit/preflight_v6.sh
+ 104 /opt/project/sdk_public_review/review_batches/batch5_audit_script_preflight_draft1/source_snapshot/scripts/audit/preflight_v6.sh
+ 312 total
+```
+
+## sha256sum
+```text
+9b58ffc36f660cd55555b342ce2fc0ae42c0c6ed573afb9f1017ed9c7827b008  scripts/audit/preflight_v6.sh
+9b58ffc36f660cd55555b342ce2fc0ae42c0c6ed573afb9f1017ed9c7827b008  review_queue/batch5_audit_script_preflight_draft1/source_snapshot/scripts/audit/preflight_v6.sh
+9b58ffc36f660cd55555b342ce2fc0ae42c0c6ed573afb9f1017ed9c7827b008  /opt/project/sdk_public_review/review_batches/batch5_audit_script_preflight_draft1/source_snapshot/scripts/audit/preflight_v6.sh
+```
+
+## file output
+```text
+scripts/audit/preflight_v6.sh:                                                                                                    Bourne-Again shell script, ASCII text executable
+review_queue/batch5_audit_script_preflight_draft1/source_snapshot/scripts/audit/preflight_v6.sh:                                  Bourne-Again shell script, ASCII text executable
+/opt/project/sdk_public_review/review_batches/batch5_audit_script_preflight_draft1/source_snapshot/scripts/audit/preflight_v6.sh: Bourne-Again shell script, ASCII text executable
+```
+
+## sed -n 1,5p
+
+### scripts/audit/preflight_v6.sh
+```text
+#!/usr/bin/env bash
+set -euo pipefail
+
+usage() {
+  cat <<'USAGE'
+```
+
+### review_queue/batch5_audit_script_preflight_draft1/source_snapshot/scripts/audit/preflight_v6.sh
+```text
+#!/usr/bin/env bash
+set -euo pipefail
+
+usage() {
+  cat <<'USAGE'
+```
+
+### /opt/project/sdk_public_review/review_batches/batch5_audit_script_preflight_draft1/source_snapshot/scripts/audit/preflight_v6.sh
+```text
+#!/usr/bin/env bash
+set -euo pipefail
+
+usage() {
+  cat <<'USAGE'
+```
+
+## first 120 bytes hex
+
+### scripts/audit/preflight_v6.sh
+```text
+ 23 21 2f 75 73 72 2f 62 69 6e 2f 65 6e 76 20 62
+ 61 73 68 0a 73 65 74 20 2d 65 75 6f 20 70 69 70
+ 65 66 61 69 6c 0a 0a 75 73 61 67 65 28 29 20 7b
+ 0a 20 20 63 61 74 20 3c 3c 27 55 53 41 47 45 27
+ 0a 55 73 61 67 65 3a 20 70 72 65 66 6c 69 67 68
+ 74 5f 76 36 2e 73 68 20 5b 2d 2d 65 78 70 65 63
+ 74 2d 62 72 61 6e 63 68 20 3c 62 72 61 6e 63 68
+ 3e 5d 20 5b 2d 2d 65 78
+```
+
+### review_queue/batch5_audit_script_preflight_draft1/source_snapshot/scripts/audit/preflight_v6.sh
+```text
+ 23 21 2f 75 73 72 2f 62 69 6e 2f 65 6e 76 20 62
+ 61 73 68 0a 73 65 74 20 2d 65 75 6f 20 70 69 70
+ 65 66 61 69 6c 0a 0a 75 73 61 67 65 28 29 20 7b
+ 0a 20 20 63 61 74 20 3c 3c 27 55 53 41 47 45 27
+ 0a 55 73 61 67 65 3a 20 70 72 65 66 6c 69 67 68
+ 74 5f 76 36 2e 73 68 20 5b 2d 2d 65 78 70 65 63
+ 74 2d 62 72 61 6e 63 68 20 3c 62 72 61 6e 63 68
+ 3e 5d 20 5b 2d 2d 65 78
+```
+
+### /opt/project/sdk_public_review/review_batches/batch5_audit_script_preflight_draft1/source_snapshot/scripts/audit/preflight_v6.sh
+```text
+ 23 21 2f 75 73 72 2f 62 69 6e 2f 65 6e 76 20 62
+ 61 73 68 0a 73 65 74 20 2d 65 75 6f 20 70 69 70
+ 65 66 61 69 6c 0a 0a 75 73 61 67 65 28 29 20 7b
+ 0a 20 20 63 61 74 20 3c 3c 27 55 53 41 47 45 27
+ 0a 55 73 61 67 65 3a 20 70 72 65 66 6c 69 67 68
+ 74 5f 76 36 2e 73 68 20 5b 2d 2d 65 78 70 65 63
+ 74 2d 62 72 61 6e 63 68 20 3c 62 72 61 6e 63 68
+ 3e 5d 20 5b 2d 2d 65 78
+```
+
+## python newline diagnostics
+```text
+## scripts/audit/preflight_v6.sh
+size_bytes=2713
+sha256=9b58ffc36f660cd55555b342ce2fc0ae42c0c6ed573afb9f1017ed9c7827b008
+newline_count_lf=104
+carriage_return_count_cr=0
+contains_cr_only=False
+contains_literal_backslash_n=True
+line_1=#!/usr/bin/env bash
+line_2=set -euo pipefail
+
+## review_queue/batch5_audit_script_preflight_draft1/source_snapshot/scripts/audit/preflight_v6.sh
+size_bytes=2713
+sha256=9b58ffc36f660cd55555b342ce2fc0ae42c0c6ed573afb9f1017ed9c7827b008
+newline_count_lf=104
+carriage_return_count_cr=0
+contains_cr_only=False
+contains_literal_backslash_n=True
+line_1=#!/usr/bin/env bash
+line_2=set -euo pipefail
+
+## /opt/project/sdk_public_review/review_batches/batch5_audit_script_preflight_draft1/source_snapshot/scripts/audit/preflight_v6.sh
+size_bytes=2713
+sha256=9b58ffc36f660cd55555b342ce2fc0ae42c0c6ed573afb9f1017ed9c7827b008
+newline_count_lf=104
+carriage_return_count_cr=0
+contains_cr_only=False
+contains_literal_backslash_n=True
+line_1=#!/usr/bin/env bash
+line_2=set -euo pipefail
+
+```
+
+## Diagnosis conclusion
+
+- Local private script, private review snapshot, and local public mirror snapshot were compared byte-for-byte.
+- If the sha256 values below are identical and LF counts are non-zero, local generation, snapshot copy, and local public mirror export preserved real LF newlines.
+- If GitHub web raw still displays a compressed first line while local public mirror bytes are correct, the mismatch is outside the local generation/copy/export path captured here and should be checked against the exact GitHub URL/cache/view used for review.
+- No CR-only newline pattern or literal backslash-n encoding should be accepted as a valid script format.

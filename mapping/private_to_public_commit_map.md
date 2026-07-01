@@ -61,3 +61,8 @@ notes:
   private_base_commit: df8f253
   private_state: uncommitted_draft_audit_script_format_repair_r3
   public_export_reason: ChatGPT re-review of regenerated multi-line draft preflight audit script with line structure evidence
+
+- batch: batch5_audit_script_preflight_draft1_DIAG1
+  private_base_commit: df8f253
+  private_state: uncommitted_draft_audit_script_line_diagnosis
+  public_export_reason: ChatGPT diagnosis of apparent line structure mismatch between public raw view and local evidence
