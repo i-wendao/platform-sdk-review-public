@@ -1,0 +1,9 @@
+commit ea8641264ebafc1ae1462a6c61de8c7339ab1a5b
+Author: 文刀文武 <wendao.tr@proton.me>
+Date:   Wed Jul 1 20:53:36 2026 +0800
+
+    feat: add shopee ts sdk adapter skeleton
+
+adapters/shopee_ts/src/adapter_candidate.ts
+adapters/shopee_ts/src/output_contract.ts
+adapters/shopee_ts/src/sdk_boundary.ts

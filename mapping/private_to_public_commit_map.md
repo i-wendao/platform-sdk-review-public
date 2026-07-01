@@ -26,3 +26,8 @@ notes:
   private_base_commit: 9798b7f
   private_state: uncommitted_review_package
   public_export_reason: ChatGPT review of standard patch header and temp apply landing verification
+
+- batch: batch5_14_skeleton_static_review
+  private_base_commit: 8be85d6
+  private_state: uncommitted_review_package
+  public_export_reason: ChatGPT static review of Shopee TS SDK adapter skeleton files

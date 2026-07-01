@@ -1,0 +1,8 @@
+# Static grep checks
+
+## High risk runtime/API/env/DB patterns
+
+## Import lines
+adapters/shopee_ts/src/output_contract.ts:1:import type { CandidateStatus } from "./sdk_boundary.js";
+adapters/shopee_ts/src/adapter_candidate.ts:1:import { createCandidateRecord } from "./output_contract.js";
+adapters/shopee_ts/src/adapter_candidate.ts:2:import { getSdkBoundarySummary } from "./sdk_boundary.js";
