@@ -46,3 +46,8 @@ notes:
   private_base_commit: c627b35
   private_state: uncommitted_governance_backfill_apply_diff
   public_export_reason: ChatGPT review of Decision Log, Project Map, Issue, RAG, and Closure backfill diff before private commit
+
+- batch: batch5_audit_script_preflight_draft1
+  private_base_commit: df8f253
+  private_state: uncommitted_draft_audit_script
+  public_export_reason: ChatGPT review of draft read-only git preflight audit script before reviewed status
