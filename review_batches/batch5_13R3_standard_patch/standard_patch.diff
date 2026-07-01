@@ -1,0 +1,181 @@
+diff --git a/adapters/shopee_ts/src/sdk_boundary.ts b/adapters/shopee_ts/src/sdk_boundary.ts
+new file mode 100644
+index 0000000..75fa7d4
+--- /dev/null
++++ b/adapters/shopee_ts/src/sdk_boundary.ts
+@@ -0,0 +1,71 @@
++/**
++ * Shopee SDK boundary candidate.
++ *
++ * Boundary:
++ * - local metadata only;
++ * - no environment file read;
++ * - no API call;
++ * - no database write;
++ * - no request signing.
++ */
++
++export type CandidateStatus =
++  | "candidate"
++  | "suspected"
++  | "not_officially_confirmed"
++  | "needs_official_doc_check";
++
++export type SdkExportCandidate = {
++  exportName: string;
++  status: CandidateStatus;
++  note: string;
++};
++
++export const SHOPEE_SDK_PACKAGE = {
++  name: "@congminh1254/shopee-sdk",
++  version: "1.13.0",
++  source: "local_static_inspect",
++  status: "candidate" satisfies CandidateStatus,
++} as const;
++
++export const SDK_EXPORT_CANDIDATES: readonly SdkExportCandidate[] = [
++  {
++    exportName: ".",
++    status: "candidate",
++    note: "Main export observed from local static package metadata.",
++  },
++  {
++    exportName: "./managers",
++    status: "needs_official_doc_check",
++    note: "Manager export observed from local static package metadata.",
++  },
++  {
++    exportName: "./schemas",
++    status: "needs_official_doc_check",
++    note: "Schema export observed from local static package metadata.",
++  },
++  {
++    exportName: "./storage",
++    status: "needs_official_doc_check",
++    note: "Storage export is auth-adjacent and requires later approval.",
++  },
++];
++
++export function getSdkBoundarySummary() {
++  return {
++    package: SHOPEE_SDK_PACKAGE,
++    exports: SDK_EXPORT_CANDIDATES,
++    boundaries: {
++      readEnvironmentFile: false,
++      checkSecret: false,
++      callApi: false,
++      generateSignature: false,
++      writeDatabase: false,
++      runExamples: false,
++      runAuth: false,
++      runSandbox: false,
++      methodDiscoveryActualRun: false,
++      updateRegistry: false,
++    },
++  };
++}
+diff --git a/adapters/shopee_ts/src/output_contract.ts b/adapters/shopee_ts/src/output_contract.ts
+new file mode 100644
+index 0000000..5bfeaa8
+--- /dev/null
++++ b/adapters/shopee_ts/src/output_contract.ts
+@@ -0,0 +1,56 @@
++import type { CandidateStatus } from "./sdk_boundary.js";
++
++export type ShopeeAdapterDomain =
++  | "product"
++  | "order"
++  | "logistics"
++  | "settlement_payment"
++  | "after_sales"
++  | "shop_basic"
++  | "media"
++  | "promotion";
++
++export type ShopeeAdapterCandidateRecord = {
++  platform: "shopee";
++  adapter: "shopee_ts";
++  sdkPackage: "@congminh1254/shopee-sdk";
++  sdkVersion: "1.13.0";
++  businessDomain: ShopeeAdapterDomain;
++  sdkModule: string;
++  sdkSymbol: string;
++  status: CandidateStatus;
++  requestShapeCandidate: "not_defined";
++  responseShapeCandidate: "not_defined";
++  uncertainty: string;
++  needsOfficialDocCheck: true;
++};
++
++export const OUTPUT_CONTRACT_BOUNDARY = {
++  status: "candidate",
++  writesDatabase: false,
++  writesRawEvidence: false,
++  updatesRegistry: false,
++  callsApi: false,
++} as const;
++
++export function createCandidateRecord(
++  businessDomain: ShopeeAdapterDomain,
++  sdkModule: string,
++  sdkSymbol: string,
++  status: CandidateStatus = "candidate",
++): ShopeeAdapterCandidateRecord {
++  return {
++    platform: "shopee",
++    adapter: "shopee_ts",
++    sdkPackage: "@congminh1254/shopee-sdk",
++    sdkVersion: "1.13.0",
++    businessDomain,
++    sdkModule,
++    sdkSymbol,
++    status,
++    requestShapeCandidate: "not_defined",
++    responseShapeCandidate: "not_defined",
++    uncertainty: "Community SDK static signal only.",
++    needsOfficialDocCheck: true,
++  };
++}
+diff --git a/adapters/shopee_ts/src/adapter_candidate.ts b/adapters/shopee_ts/src/adapter_candidate.ts
+new file mode 100644
+index 0000000..4d1f046
+--- /dev/null
++++ b/adapters/shopee_ts/src/adapter_candidate.ts
+@@ -0,0 +1,36 @@
++import { createCandidateRecord } from "./output_contract.js";
++import { getSdkBoundarySummary } from "./sdk_boundary.js";
++
++const MANAGER_CANDIDATES = [
++  createCandidateRecord("product", "./managers", "ProductManager", "needs_official_doc_check"),
++  createCandidateRecord("product", "./managers", "GlobalProductManager", "needs_official_doc_check"),
++  createCandidateRecord("order", "./managers", "OrderManager", "needs_official_doc_check"),
++  createCandidateRecord("logistics", "./managers", "LogisticsManager", "needs_official_doc_check"),
++  createCandidateRecord("logistics", "./managers", "FirstMileManager", "needs_official_doc_check"),
++  createCandidateRecord("settlement_payment", "./managers", "PaymentManager", "needs_official_doc_check"),
++  createCandidateRecord("after_sales", "./managers", "ReturnsManager", "needs_official_doc_check"),
++  createCandidateRecord("shop_basic", "./managers", "ShopManager", "needs_official_doc_check"),
++  createCandidateRecord("shop_basic", "./managers", "MerchantManager", "needs_official_doc_check"),
++  createCandidateRecord("shop_basic", "./managers", "PublicManager", "needs_official_doc_check"),
++  createCandidateRecord("media", "./managers", "MediaManager", "needs_official_doc_check"),
++  createCandidateRecord("media", "./managers", "MediaSpaceManager", "needs_official_doc_check"),
++  createCandidateRecord("promotion", "./managers", "DiscountManager", "needs_official_doc_check"),
++  createCandidateRecord("promotion", "./managers", "VoucherManager", "needs_official_doc_check"),
++  createCandidateRecord("promotion", "./managers", "BundleDealManager", "needs_official_doc_check"),
++  createCandidateRecord("promotion", "./managers", "AddOnDealManager", "needs_official_doc_check"),
++];
++
++export function buildShopeeAdapterCandidateSummary() {
++  return {
++    mode: "candidate_static_summary",
++    boundary: getSdkBoundarySummary(),
++    records: MANAGER_CANDIDATES,
++    notes: [
++      "No SDK import is executed here.",
++      "No API request is made here.",
++      "No environment file is read here.",
++      "No database write is made here.",
++      "All records require official document check.",
++    ],
++  };
++}

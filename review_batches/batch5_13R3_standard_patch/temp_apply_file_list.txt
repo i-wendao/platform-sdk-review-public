@@ -1,0 +1,4 @@
+adapters/shopee_ts/src/adapter_candidate.ts
+adapters/shopee_ts/src/inspect.placeholder.js
+adapters/shopee_ts/src/output_contract.ts
+adapters/shopee_ts/src/sdk_boundary.ts

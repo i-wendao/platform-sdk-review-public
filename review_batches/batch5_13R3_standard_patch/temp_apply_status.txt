@@ -1,0 +1,4 @@
+temp_apply_result=pass
+tmp_dir=/tmp/batch5_13R3_apply_check.cVBMBS
+top_level_shopee_ts=absent
+expected_files=present

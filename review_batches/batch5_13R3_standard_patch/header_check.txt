@@ -1,0 +1,9 @@
+1:diff --git a/adapters/shopee_ts/src/sdk_boundary.ts b/adapters/shopee_ts/src/sdk_boundary.ts
+4:--- /dev/null
+5:+++ b/adapters/shopee_ts/src/sdk_boundary.ts
+78:diff --git a/adapters/shopee_ts/src/output_contract.ts b/adapters/shopee_ts/src/output_contract.ts
+81:--- /dev/null
+82:+++ b/adapters/shopee_ts/src/output_contract.ts
+140:diff --git a/adapters/shopee_ts/src/adapter_candidate.ts b/adapters/shopee_ts/src/adapter_candidate.ts
+143:--- /dev/null
+144:+++ b/adapters/shopee_ts/src/adapter_candidate.ts

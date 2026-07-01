@@ -21,3 +21,8 @@ notes:
   private_base_commit: 0e0541d
   private_state: uncommitted_review_package
   public_export_reason: ChatGPT review of corrected adapter skeleton patch path repair
+
+- batch: batch5_13R3_standard_patch
+  private_base_commit: 9798b7f
+  private_state: uncommitted_review_package
+  public_export_reason: ChatGPT review of standard patch header and temp apply landing verification

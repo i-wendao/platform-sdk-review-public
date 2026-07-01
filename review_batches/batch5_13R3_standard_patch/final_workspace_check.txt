@@ -1,0 +1,9 @@
+commit=9798b7f
+status:
+?? review_queue/batch5_13R3_standard_patch/
+top_level_shopee_ts:
+absent
+formal_skeleton_files:
+adapters/shopee_ts/src/sdk_boundary.ts=absent
+adapters/shopee_ts/src/output_contract.ts=absent
+adapters/shopee_ts/src/adapter_candidate.ts=absent
