@@ -31,3 +31,8 @@ notes:
   private_base_commit: 8be85d6
   private_state: uncommitted_review_package
   public_export_reason: ChatGPT static review of Shopee TS SDK adapter skeleton files
+
+- batch: batch5_governance_checkpoint1
+  private_base_commit: c5ba363
+  private_state: uncommitted_governance_checkpoint
+  public_export_reason: ChatGPT review of v6 governance checkpoint, gaps, cadence, and public sync safety
