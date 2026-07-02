@@ -91,3 +91,8 @@ notes:
   private_base_commit: 51d58a2
   private_state: uncommitted_patch_draft_review_package_only
   public_export_reason: ChatGPT review of Shopee TS adapter patch draft before any source apply
+
+- batch: batch5_shopee_ts_adapter_patch_apply1
+  private_base_commit: 3ce17c2
+  private_state: applied_source_and_review_package
+  public_export_reason: ChatGPT review of patch apply result and static no-emit evidence
