@@ -96,3 +96,8 @@ notes:
   private_base_commit: 3ce17c2
   private_state: applied_source_and_review_package
   public_export_reason: ChatGPT review of patch apply result and static no-emit evidence
+
+- batch: batch5_governance_rollup_public_audit1
+  private_base_commit: e305727
+  private_state: uncommitted_governance_rollup_public_audit
+  public_export_reason: ChatGPT review of governance rollup from 70717df to 123edfd before private commit
