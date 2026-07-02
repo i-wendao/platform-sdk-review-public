@@ -141,3 +141,8 @@ notes:
   private_base_commit: 6b32d97
   private_state: uncommitted_final_static_closure_runtime_gate_public_export
   public_export_reason: ChatGPT review of Shopee TS adapter final static closure and runtime gate design before private export evidence commit
+
+- batch: batch6_public_export_remote_truth_check_rule1
+  private_base_commit: f429054
+  private_state: uncommitted_public_export_remote_truth_check_rule_evidence
+  public_export_reason: ChatGPT review of public export remote truth check rule before private export evidence commit
