@@ -1,0 +1,4 @@
+ adapters/shopee_ts/src/adapter_candidate.ts |   57 ++++++++++++++++----
+ adapters/shopee_ts/src/output_contract.ts   |   40 ++++++++++++--
+ adapters/shopee_ts/src/sdk_boundary.ts      |   76 ++++++++++++++++++++++-----
+ 3 files changed, 140 insertions(+), 33 deletions(-)

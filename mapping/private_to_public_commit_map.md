@@ -86,3 +86,8 @@ notes:
   private_base_commit: 52265ca
   private_state: uncommitted_token_efficiency_policy_audit_gate_update
   public_export_reason: ChatGPT review of Audit Gate policy before private commit
+
+- batch: batch5_shopee_ts_adapter_patch_draft1
+  private_base_commit: 51d58a2
+  private_state: uncommitted_patch_draft_review_package_only
+  public_export_reason: ChatGPT review of Shopee TS adapter patch draft before any source apply
