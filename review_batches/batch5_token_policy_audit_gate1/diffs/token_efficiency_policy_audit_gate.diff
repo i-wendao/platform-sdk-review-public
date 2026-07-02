@@ -1,0 +1,90 @@
+diff --git a/docs/TOKEN_EFFICIENCY_POLICY.md b/docs/TOKEN_EFFICIENCY_POLICY.md
+index b2b9b63..d14798e 100644
+--- a/docs/TOKEN_EFFICIENCY_POLICY.md
++++ b/docs/TOKEN_EFFICIENCY_POLICY.md
+@@ -229,3 +229,85 @@ Saving tokens or using a lower model must not override:
+ - `docs/AUDIT_SCRIPT_POLICY.md`
+ - reviewed-script status
+ - Tier policy
++
++## Audit Gate policy
++
++Audit Gate is a separate batch used only to review an instruction before execution.
++
++An Audit Gate checks:
++
++- instruction scope
++- Tier selection
++- model selection
++- reasoning level selection
++- permission boundaries
++- current git state
++- reviewed-script status
++- path risk
++- secret / API / DB / env risk
++
++An Audit Gate must not execute the actual task. It must not modify formal code, call APIs, write databases, read `.env`, run SDK runtime/auth/sandbox flows, or run tests.
++
++### One batch still means one model
++
++A single batch should still use one model and one reasoning level.
++
++If a higher model should review the instruction before a lower model executes it, split the work into two batches:
++
++```text
++Batch A: Audit Gate
++Batch B: Execution
++```
++
++Do not switch models repeatedly inside one batch. If a task combines different risk levels, split the batch.
++
++### When Audit Gate is required
++
++Audit Gate is required before:
++
++- Tier 3 API / DB / env / token / SDK runtime work
++- formal adapter code modification
++- SDK boundary / output contract / auth / sign / pagination work
++- complex TypeScript fixes
++- public/private repository abnormal recovery
++- rollback, incident analysis, or rule-conflict resolution
++- prompts that involve multiple governance documents and complex boundaries
++- any case where a lower model's required checks find uncertainty, conflict, unclear Tier, unclear reviewed-script status, or path/secret/API/DB/env risk
++
++Audit Gate is usually not required for:
++
++- reviewed preflight
++- git status / diff / commit evidence checks
++- public mirror export
++- Closure / RAG / issue log archive
++- read-only no-emit checks
++- private commit/push of already-reviewed content
++
++### Audit Gate model guidance
++
++| Audit Gate type | Recommended model | Reasoning level |
++|---|---|---|
++| Normal Tier 2 risk review | GPT-5.4 | High |
++| High-risk Tier 2 or formal code-boundary review | GPT-5.5 | High |
++| Tier 3 / API / DB / env / token / SDK runtime / incident recovery | GPT-5.5 | Extra high |
++
++### Execution batch after Audit Gate
++
++An Audit Gate PASS does not remove the Execution batch's own responsibility.
++
++The Execution batch must still run Instruction Self-Audit and required checks under its own selected model and reasoning level.
++
++The Execution batch must stop and return to Audit Gate if it finds:
++
++- git state does not match the audited expectation
++- the execution instruction differs from the Audit Gate conclusion
++- the task scope expanded
++- the Tier became higher
++- secret/API/DB/env risk appeared
++- reviewed-script status does not match the audited expectation
++
++### Token saving and Audit Gate
++
++Audit Gate is not mandatory for every batch.
++
++Low-risk mechanical batches should not require a high-model Audit Gate by default, because that would cancel the intended token savings. Use Audit Gate when risk, uncertainty, or boundary complexity justifies it.

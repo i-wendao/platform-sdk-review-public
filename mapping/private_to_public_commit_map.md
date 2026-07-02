@@ -81,3 +81,8 @@ notes:
   private_base_commit: 1657d84
   private_state: uncommitted_token_efficiency_policy_model_reasoning_merge
   public_export_reason: ChatGPT review of merged token/model/reasoning policy before private commit
+
+- batch: batch5_token_policy_audit_gate1
+  private_base_commit: 52265ca
+  private_state: uncommitted_token_efficiency_policy_audit_gate_update
+  public_export_reason: ChatGPT review of Audit Gate policy before private commit
