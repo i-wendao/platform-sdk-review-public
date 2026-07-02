@@ -116,3 +116,8 @@ notes:
   private_base_commit: 577c3f5
   private_state: uncommitted_governance_v7_external_watch_reference_rule_evidence
   public_export_reason: ChatGPT review of governance V7 external watch reference rule before private export evidence commit
+
+- batch: batch6_governance_v7_external_watch_joint_decision_rule1
+  private_base_commit: fb228e9
+  private_state: uncommitted_governance_v7_external_watch_joint_decision_rule_evidence
+  public_export_reason: ChatGPT review of governance V7 external watch joint decision rule before private export evidence commit
