@@ -151,3 +151,8 @@ notes:
   private_base_commit: 3df54e9
   private_state: uncommitted_tier3_import_only_execution_public_export_evidence
   public_export_reason: ChatGPT review of Tier 3 import-only execution evidence before private export evidence commit
+
+- batch: batch6_governance_hard_rules_dashboard_init1
+  private_base_commit: 7661a5b
+  private_state: uncommitted_governance_hard_rules_dashboard_init
+  public_export_reason: ChatGPT review of the governance hard-rules dashboard initialization before dashboard audit status is written back
