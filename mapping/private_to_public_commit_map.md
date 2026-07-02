@@ -101,3 +101,8 @@ notes:
   private_base_commit: e305727
   private_state: uncommitted_governance_rollup_public_audit
   public_export_reason: ChatGPT review of governance rollup from 70717df to 123edfd before private commit
+
+- batch: batch6_governance_v7_consolidation1
+  private_base_commit: 712949b
+  private_state: uncommitted_governance_v7_public_export_evidence
+  public_export_reason: ChatGPT review of governance V7 consolidation before private export evidence commit
