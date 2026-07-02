@@ -1,0 +1,18 @@
+# Exported Files
+
+- `review_batches/batch6_shopee_ts_adapter_tier3_import_only_execution1/execution_summary.md`
+- `review_batches/batch6_shopee_ts_adapter_tier3_import_only_execution1/user_approval_scope.md`
+- `review_batches/batch6_shopee_ts_adapter_tier3_import_only_execution1/preflight_result.md`
+- `review_batches/batch6_shopee_ts_adapter_tier3_import_only_execution1/command_executed.md`
+- `review_batches/batch6_shopee_ts_adapter_tier3_import_only_execution1/stdout_stderr_summary.md`
+- `review_batches/batch6_shopee_ts_adapter_tier3_import_only_execution1/exit_code.md`
+- `review_batches/batch6_shopee_ts_adapter_tier3_import_only_execution1/import_result_classification.md`
+- `review_batches/batch6_shopee_ts_adapter_tier3_import_only_execution1/stop_conditions_check.md`
+- `review_batches/batch6_shopee_ts_adapter_tier3_import_only_execution1/env_token_attestation.md`
+- `review_batches/batch6_shopee_ts_adapter_tier3_import_only_execution1/api_http_zero_budget_attestation.md`
+- `review_batches/batch6_shopee_ts_adapter_tier3_import_only_execution1/db_zero_write_attestation.md`
+- `review_batches/batch6_shopee_ts_adapter_tier3_import_only_execution1/no_client_construction_attestation.md`
+- `review_batches/batch6_shopee_ts_adapter_tier3_import_only_execution1/risk_register.md`
+- `review_batches/batch6_shopee_ts_adapter_tier3_import_only_execution1/recommended_next_batch.md`
+- `review_batches/batch6_shopee_ts_adapter_tier3_import_only_execution1/chatgpt_review_request.md`
+

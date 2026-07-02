@@ -146,3 +146,8 @@ notes:
   private_base_commit: f429054
   private_state: uncommitted_public_export_remote_truth_check_rule_evidence
   public_export_reason: ChatGPT review of public export remote truth check rule before private export evidence commit
+
+- batch: batch6_shopee_ts_adapter_tier3_import_only_execution1
+  private_base_commit: 3df54e9
+  private_state: uncommitted_tier3_import_only_execution_public_export_evidence
+  public_export_reason: ChatGPT review of Tier 3 import-only execution evidence before private export evidence commit
