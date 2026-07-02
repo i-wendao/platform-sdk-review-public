@@ -1,0 +1,16 @@
+{
+  "name": "shopee-ts-adapter",
+  "version": "0.0.0-draft",
+  "private": true,
+  "type": "module",
+  "description": "Shopee TypeScript adapter skeleton. No SDK dependency installed in Batch 3.",
+  "scripts": {
+    "inspect:placeholder": "node src/inspect.placeholder.js"
+  },
+  "dependencies": {
+    "@congminh1254/shopee-sdk": "1.13.0"
+  },
+  "devDependencies": {
+    "typescript": "6.0.3"
+  }
+}

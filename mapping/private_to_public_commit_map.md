@@ -71,3 +71,13 @@ notes:
   private_base_commit: df8f253
   private_state: uncommitted_codex_reverse_review_result
   public_export_reason: ChatGPT review of Codex reverse review result for draft preflight audit script
+
+- batch: batch5_shopee_ts_static_check1
+  private_base_commit: 1657d84
+  private_state: uncommitted_package_toolchain_and_static_check_evidence
+  public_export_reason: ChatGPT review of TypeScript toolchain addition and no-emit PASS before private commit
+
+- batch: batch5_token_model_policy_merge1
+  private_base_commit: 1657d84
+  private_state: uncommitted_token_efficiency_policy_model_reasoning_merge
+  public_export_reason: ChatGPT review of merged token/model/reasoning policy before private commit

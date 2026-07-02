@@ -1,0 +1,4 @@
+ adapters/shopee_ts/package-lock.json | 17 ++++++++-
+ adapters/shopee_ts/package.json      |  3 ++
+ docs/TOKEN_EFFICIENCY_POLICY.md      | 67 ++++++++++++++++++++++++++++++++++++
+ 3 files changed, 86 insertions(+), 1 deletion(-)

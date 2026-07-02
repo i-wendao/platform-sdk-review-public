@@ -1,0 +1,48 @@
+diff --git a/adapters/shopee_ts/package-lock.json b/adapters/shopee_ts/package-lock.json
+index e708488..ef5b4df 100644
+--- a/adapters/shopee_ts/package-lock.json
++++ b/adapters/shopee_ts/package-lock.json
+@@ -10,7 +10,9 @@
+       "dependencies": {
+         "@congminh1254/shopee-sdk": "1.13.0"
+       },
+-      "devDependencies": {}
++      "devDependencies": {
++        "typescript": "6.0.3"
++      }
+     },
+     "node_modules/@congminh1254/shopee-sdk": {
+       "version": "1.13.0",
+@@ -100,6 +102,19 @@
+         "url": "https://opencollective.com/node-fetch"
+       }
+     },
++    "node_modules/typescript": {
++      "version": "6.0.3",
++      "resolved": "https://registry.npmjs.org/typescript/-/typescript-6.0.3.tgz",
++      "integrity": "sha512-y2TvuxSZPDyQakkFRPZHKFm+KKVqIisdg9/CZwm9ftvKXLP8NRWj38/ODjNbr43SsoXqNuAisEf1GdCxqWcdBw==",
++      "dev": true,
++      "bin": {
++        "tsc": "bin/tsc",
++        "tsserver": "bin/tsserver"
++      },
++      "engines": {
++        "node": ">=14.17"
++      }
++    },
+     "node_modules/web-streams-polyfill": {
+       "version": "3.3.3",
+       "resolved": "https://registry.npmjs.org/web-streams-polyfill/-/web-streams-polyfill-3.3.3.tgz",
+diff --git a/adapters/shopee_ts/package.json b/adapters/shopee_ts/package.json
+index 57c6501..f314824 100644
+--- a/adapters/shopee_ts/package.json
++++ b/adapters/shopee_ts/package.json
+@@ -9,5 +9,8 @@
+   },
+   "dependencies": {
+     "@congminh1254/shopee-sdk": "1.13.0"
++  },
++  "devDependencies": {
++    "typescript": "6.0.3"
+   }
+ }

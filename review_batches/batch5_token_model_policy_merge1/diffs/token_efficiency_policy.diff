@@ -1,0 +1,75 @@
+diff --git a/docs/TOKEN_EFFICIENCY_POLICY.md b/docs/TOKEN_EFFICIENCY_POLICY.md
+index 74c0169..b2b9b63 100644
+--- a/docs/TOKEN_EFFICIENCY_POLICY.md
++++ b/docs/TOKEN_EFFICIENCY_POLICY.md
+@@ -162,3 +162,70 @@ The review evidence must include at least one of:
+ - an equivalent explicit file-content evidence package
+ 
+ This is required before ChatGPT can fully review untracked runtime, closure, RAG, issue, or source files.
++
++## Model and reasoning level policy
++
++`docs/TOKEN_EFFICIENCY_POLICY.md` is the single source of truth for token efficiency, Codex model assignment, reasoning level selection, and batch splitting.
++
++If a prompt or older document mentions `Codex Model Assignment Policy v1` or `Codex Reasoning Level Policy v1`, treat those policies as merged into this document. They must not become a second policy source.
++
++### One batch, one model, one reasoning level
++
++Every Codex batch must declare:
++
++```text
++建议模型：
++若使用 GPT-5.5，Reasoning Level：
++若使用 GPT-5.4，Reasoning Level：
++原因：
++```
++
++A single batch should use one model and one reasoning level. If a task contains actions with different risk levels, split the work into separate batches.
++
++### Model and reasoning by highest risk
++
++Choose the model and reasoning level by the highest-risk action in the current batch, not by each individual command.
++
++### Default assignment
++
++| Model | Reasoning Level | Default scope |
++|---|---|---|
++| GPT-5.4-Mini | Low | reviewed preflight; git status / branch / remote / diff; commit evidence checks; review_queue / Closure / RAG / issue log archive; public mirror export; no-emit static check that only records results; package/toolchain inspection; reviewed archive commit/push |
++| GPT-5.4 | Medium | draft script generation; review package design; small governance policy updates; PROJECT_MAP / DECISION_LOG small patches; public/private evidence alignment; simple TypeScript error location without modifying formal code |
++| GPT-5.3-Codex | High | Codex reverse review; patch review; diff review; reverse review before marking scripts reviewed; checking whether ChatGPT missed a boundary issue |
++| GPT-5.5 | High | formal adapter code fixes; SDK boundary / output contract / adapter candidate design; complex TypeScript fixes; auth / sign / pagination / raw output contract design |
++| GPT-5.5 | Extra high | Tier 3 API / DB / env / token / SDK runtime; public/private repo abnormal recovery; rule conflict, rollback, or incident analysis; business semantics, data definitions, or permission-boundary decisions |
++
++### Required checks follow the batch model
++
++These checks do not require switching models inside the same batch. They follow the selected batch model and reasoning level:
++
++- Instruction Self-Audit
++- active v6 docs
++- `docs/TOKEN_EFFICIENCY_POLICY.md`
++- `docs/AUDIT_SCRIPT_POLICY.md`
++- reviewed-script status check
++- Tier check
++- git state check
++
++If a lower model finds uncertainty, conflict, unclear Tier, unclear script status, path risk, secret/API/DB/env risk, or git state mismatch, it must stop and request a model upgrade or ChatGPT review.
++
++### Low model stop rule
++
++GPT-5.4-Mini / Low is limited to verifiable, mechanical, low-judgment tasks.
++
++If it finds abnormal state, conflicting instructions, missing approval, unclear file scope, or higher-risk implications, it must stop. It must not expand permissions, repair high-risk issues, rewrite scripts, or reinterpret governance policy on its own.
++
++### Token saving cannot override governance
++
++Saving tokens or using a lower model must not override:
++
++- Harness
++- RAG
++- Closure
++- Issue Closed Loop
++- Decision Log
++- PROJECT_MAP
++- `docs/AUDIT_SCRIPT_POLICY.md`
++- reviewed-script status
++- Tier policy

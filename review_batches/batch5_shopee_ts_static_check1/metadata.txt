@@ -1,0 +1,7 @@
+commit=1657d84
+branch=review/batch5-sdk-adapter
+status_before_review_package_creation=clean_after_preflight
+command=cd adapters/shopee_ts && tsc --noEmit --target ES2022 --module NodeNext --moduleResolution NodeNext --strict --skipLibCheck src/*.ts
+exit_code=127
+conclusion=FAIL
+type_error_status=not_determined_compiler_unavailable
