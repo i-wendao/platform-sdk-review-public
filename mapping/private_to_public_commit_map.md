@@ -126,3 +126,8 @@ notes:
   private_base_commit: 1d5a229
   private_state: uncommitted_governance_rollup_public_audit
   public_export_reason: ChatGPT review of governance rollup from 712949b through 1d5a229, covering V7 consolidation, early rules coverage, and external watch rules
+
+- batch: batch6_shopee_ts_adapter_type_only_cleanup_apply1
+  private_base_commit: e30634b
+  private_state: uncommitted_type_only_cleanup_apply_review_evidence
+  public_export_reason: ChatGPT review of Shopee TS adapter type-only cleanup apply evidence before private export commit
