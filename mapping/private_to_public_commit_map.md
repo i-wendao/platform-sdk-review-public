@@ -131,3 +131,8 @@ notes:
   private_base_commit: e30634b
   private_state: uncommitted_type_only_cleanup_apply_review_evidence
   public_export_reason: ChatGPT review of Shopee TS adapter type-only cleanup apply evidence before private export commit
+
+- batch: batch6_shopee_ts_adapter_type_only_cleanup_closure_rollup1
+  private_base_commit: 5ee618c
+  private_state: uncommitted_type_only_cleanup_closure_rollup_evidence
+  public_export_reason: ChatGPT review of Shopee TS adapter type-only cleanup closure and governance rollup after public apply audit PASS
