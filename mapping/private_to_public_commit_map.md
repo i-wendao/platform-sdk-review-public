@@ -106,3 +106,8 @@ notes:
   private_base_commit: 712949b
   private_state: uncommitted_governance_v7_public_export_evidence
   public_export_reason: ChatGPT review of governance V7 consolidation before private export evidence commit
+
+- batch: batch6_governance_v7_early_rules_coverage_audit1
+  private_base_commit: 3d922fb
+  private_state: uncommitted_governance_v7_early_rules_coverage_audit_evidence
+  public_export_reason: ChatGPT review of governance V7 coverage of early long-project rules
